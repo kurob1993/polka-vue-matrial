@@ -3,11 +3,7 @@
     <parallax class="section page-header header-filter" :style="headerStyle">
     </parallax>
     <div class="main main-raised">
-      <div class="section">
-        <div class="container">
-          <router-view></router-view>
-        </div>
-      </div>
+      <router-view></router-view>
     </div>
   </div>
 </template>

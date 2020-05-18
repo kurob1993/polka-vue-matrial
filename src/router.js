@@ -3,13 +3,13 @@ import Router from "vue-router";
 import Index from "./views/Index.vue";
 import Landing from "./views/Landing.vue";
 import Login from "./views/Login.vue";
-import Profile from "./views/Profile.vue";
 import MainNavbar from "./layout/MainNavbar.vue";
 import MainFooter from "./layout/MainFooter.vue";
 import AdminNavbar from "./layout/AdminNavbar.vue";
 
 import Admin from "./views/Admin.vue";
-import Dashboard from "./views/pages/Dashboard.vue";
+import Home from "./views/pages/Home.vue";
+import Profile from "./views/pages/Profile.vue";
 
 Vue.use(Router);
 
@@ -28,7 +28,7 @@ const router = new Router({
     {
       path: "/",
       name: "admin",
-      redirect: "/dashboard",
+      redirect: "/home",
       components: { default: Admin, header: AdminNavbar, footer: MainFooter },
       props: {
         header: { colorOnScroll: 400 },
@@ -36,9 +36,14 @@ const router = new Router({
       },
       children: [
         {
-          path: "/dashboard",
-          name: "dashboard",
-          component: Dashboard
+          path: "/home",
+          name: "home",
+          component: Home
+        },
+        {
+          path: "/profile",
+          name: "profile",
+          component: Profile
         }
       ]
     },
@@ -59,14 +64,10 @@ const router = new Router({
         header: { colorOnScroll: 400 }
       }
     },
+    //redirect jika route tidak di temukan
     {
-      path: "/profile",
-      name: "profile",
-      components: { default: Profile, header: MainNavbar, footer: MainFooter },
-      props: {
-        header: { colorOnScroll: 400 },
-        footer: { backgroundColor: "black" }
-      }
+      path: "*",
+      redirect: "/login"
     }
   ],
   scrollBehavior: to => {
