@@ -54,6 +54,87 @@
                   </div>
                 </a>
               </li>
+              <li class="md-list-item">
+                <a
+                  href="javascript:void(0)"
+                  class="md-list-item-router md-list-item-container md-button-clean dropdown"
+                >
+                  <div class="md-list-item-content">
+                    <drop-down direction="down">
+                      <md-button
+                        slot="title"
+                        class="md-button md-button-link md-white md-simple dropdown-toggle"
+                        data-toggle="dropdown"
+                      >
+                        <i class="material-icons">apps</i>
+                        <p>Components</p>
+                      </md-button>
+                      <ul class="dropdown-menu dropdown-with-icons">
+                        <li>
+                          <a href="#/">
+                            <i class="material-icons">layers</i>
+                            <p>All Components</p>
+                          </a>
+                        </li>
+                      </ul>
+                    </drop-down>
+                  </div>
+                </a>
+              </li>
+              <li class="md-list-item">
+                <a
+                  href="javascript:void(0)"
+                  class="md-list-item-router md-list-item-container md-button-clean dropdown"
+                >
+                  <div class="md-list-item-content">
+                    <drop-down direction="down">
+                      <md-button
+                        slot="title"
+                        class="md-button md-button-link md-white md-simple dropdown-toggle"
+                        data-toggle="dropdown"
+                      >
+                        <i class="material-icons">apps</i>
+                        <p>Components</p>
+                      </md-button>
+                      <ul class="dropdown-menu dropdown-with-icons">
+                        <li>
+                          <a href="#/">
+                            <i class="material-icons">layers</i>
+                            <p>All Components</p>
+                          </a>
+                        </li>
+                      </ul>
+                    </drop-down>
+                  </div>
+                </a>
+              </li>
+              <li class="md-list-item">
+                <a
+                  href="javascript:void(0)"
+                  class="md-list-item-router md-list-item-container md-button-clean dropdown"
+                >
+                  <div class="md-list-item-content">
+                    <drop-down direction="down">
+                      <md-button
+                        slot="title"
+                        class="md-button md-button-link md-white md-simple dropdown-toggle"
+                        data-toggle="dropdown"
+                      >
+                        <i class="material-icons">apps</i>
+                        <p>Components</p>
+                      </md-button>
+                      <ul class="dropdown-menu dropdown-with-icons">
+                        <li>
+                          <a href="#/">
+                            <i class="material-icons">layers</i>
+                            <p>All Components</p>
+                          </a>
+                        </li>
+                      </ul>
+                    </drop-down>
+                  </div>
+                </a>
+              </li>
 
               <li class="md-list-item">
                 <a
@@ -94,12 +175,44 @@
                   </div>
                 </a>
               </li>
-
-              <md-list-item href="javascript:void(0)" @click="logout">
-                <i class="fas fa-sign-out-alt fa-lg"></i>
-                <p class="hidden-lg">Logout</p>
-                <md-tooltip md-direction="bottom">Logout</md-tooltip>
-              </md-list-item>
+              <li class="md-list-item">
+                <a
+                  href="javascript:void(0)"
+                  class="md-list-item-router md-list-item-container md-button-clean dropdown"
+                >
+                  <div class="md-list-item-content">
+                    <drop-down direction="down">
+                      <md-button
+                        slot="title"
+                        class="md-button md-button-link md-white md-simple dropdown-toggle"
+                        data-toggle="dropdown"
+                      >
+                        <i class="material-icons">account_circle</i>
+                        <p>{{ this.name }}</p>
+                      </md-button>
+                      <ul class="dropdown-menu dropdown-with-icons">
+                        <li class="text-center">
+                          <md-avatar class="md-large">
+                            <img
+                              src="@/assets/img/faces/avatar.jpg"
+                              alt="People"
+                            />
+                          </md-avatar>
+                        </li>
+                        <li class="text-center" style="margin: 10px">
+                          <md-divider></md-divider>
+                        </li>
+                        <li>
+                          <a href="javascript:void(0)" @click="logout">
+                            <i class="material-icons">exit_to_app</i>
+                            <p>Logout</p>
+                          </a>
+                        </li>
+                      </ul>
+                    </drop-down>
+                  </div>
+                </a>
+              </li>
             </md-list>
           </div>
         </div>
@@ -151,6 +264,7 @@ export default {
   data() {
     return {
       brand: process.env.VUE_APP_TITLE,
+      name: localStorage.getItem("user"),
       extraNavClasses: "",
       toggledClass: false
     };
